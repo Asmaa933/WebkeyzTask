@@ -1,0 +1,6 @@
+framework module Pods_WebkeyzTask {
+  umbrella header "Pods-WebkeyzTask-umbrella.h"
+
+  export *
+  module * { export * }
+}
