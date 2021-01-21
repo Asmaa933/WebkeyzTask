@@ -7,17 +7,20 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class HotelsViewController: UIViewController {
 
-    private lazy var viewModel: HotelsViewModel = {
+    @IBOutlet private weak var hotelTableView: UITableView!
+    
+    private lazy var viewModel: HotelsViewModelProtocol = {
         return HotelsViewModel()
     }()
-    
+    private let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupTableView()
+        viewModel.fetchHotels()
     }
     
 
@@ -26,6 +29,13 @@ class HotelsViewController: UIViewController {
 fileprivate extension HotelsViewController {
     
     func setupTableView() {
-        viewModel.hotelSubject.observeOn(MainScheduler.instance)
+        hotelTableView.registerCellNib(cellClass: HotelCell.self)
+        viewModel.hotelsDriver.drive(hotelTableView.rx.items(cellIdentifier: Constants.hotelCell, cellType: HotelCell.self)) {(row,item,cell) in
+            cell.configureCell(image: item.image?[0].url ?? "", name: item.hotelName ?? "")
+        }.disposed(by: disposeBag)
+        
+        hotelTableView.rx.itemSelected.subscribe { (indexPath) in
+            
+        }.disposed(by: disposeBag)
     }
 }
