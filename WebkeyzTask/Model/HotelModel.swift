@@ -46,6 +46,7 @@ class HotelModel: Mappable {
     //MARK: - Initializer
 
     required init?(map: Map) {}
+    init(){}
     
     //MARK: - Mapping
 
