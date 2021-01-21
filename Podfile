@@ -4,16 +4,22 @@
 target 'WebkeyzTask' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for WebkeyzTask
+  pod 'Alamofire'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'SDWebImage'
+  pod 'ObjectMapper'
 
+  
   target 'WebkeyzTaskTests' do
     inherit! :search_paths
     # Pods for testing
   end
-
+  
   target 'WebkeyzTaskUITests' do
     # Pods for testing
   end
-
+  
 end
