@@ -11,6 +11,7 @@ target 'WebkeyzTask' do
   pod 'RxCocoa'
   pod 'SDWebImage'
   pod 'ObjectMapper'
+  pod 'Toast'
 
   
   target 'WebkeyzTaskTests' do

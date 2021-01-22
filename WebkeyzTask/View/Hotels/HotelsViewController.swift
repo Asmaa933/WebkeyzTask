@@ -8,16 +8,28 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Toast
+
+//MARK: - HotelsViewController
 
 class HotelsViewController: UIViewController {
     
+    //MARK: - Outlets
+    
     @IBOutlet private weak var hotelTableView: UITableView!
     
+    //MARK: - Variables
+    
+    private let refreshControl = UIRefreshControl()
     private var viewModel = HotelsViewModel.shared
     private let disposeBag = DisposeBag()
+    
+    //MARK: - View Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        bindObservers()
         viewModel.fetchHotels()
     }
     
@@ -33,10 +45,16 @@ class HotelsViewController: UIViewController {
     
 }
 
+//MARK: - Helper Methods
+
 fileprivate extension HotelsViewController {
     
-    func setupTableView() {
-        hotelTableView.registerCellNib(cellClass: HotelCell.self)
+    private func bindObservers() {
+        bindTableView()
+        bindErrorsHandler()
+    }
+    
+    func bindTableView() {
         viewModel.hotelsDriver.drive(hotelTableView.rx.items(cellIdentifier: Constants.hotelCell, cellType: HotelCell.self)) {(row,item,cell) in
             cell.configureCell(image: item.image?[0].url ?? "", name: item.hotelName ?? "")
         }.disposed(by: disposeBag)
@@ -49,6 +67,31 @@ fileprivate extension HotelsViewController {
             self?.navigateToDetailsView(hotel: hotel)
         }).disposed(by: disposeBag)
         
+        refreshControl.rx.controlEvent(.valueChanged).bind {[weak self] (_) in
+            guard let self = self else {return}
+            self.hotelTableView.restore()
+            self.viewModel.reloadHotels()
+            self.refreshControl.endRefreshing()
+        }.disposed(by: disposeBag)
+    }
+    
+    func bindErrorsHandler() {
+        viewModel.errorSubject.observe(on: MainScheduler.instance).bind {[weak self] (error) in
+            guard let self = self else {return}
+            if error == Constants.internetConnectionError {
+                if self.hotelTableView.numberOfRows(inSection: 0) == 0 {
+                    self.hotelTableView.setEmptyView(title: Constants.pullMessage, messageImage: #imageLiteral(resourceName: "no-internet-connection-sign_79145-136"))
+                } else {
+                    self.view.makeToast(Constants.offlineMessage)
+                }
+            } else {
+                if !error.isEmpty {
+                    self.view.makeToast(error)
+                }
+            }
+        }.disposed(by: disposeBag)
+            
+
     }
     
     func navigateToDetailsView(hotel: HotelModel) {
@@ -57,5 +100,8 @@ fileprivate extension HotelsViewController {
         navigationController?.pushViewController(detailsView, animated: true)
     }
     
-    
+    func setupTableView() {
+        hotelTableView.registerCellNib(cellClass: HotelCell.self)
+        hotelTableView.addSubview(refreshControl)
+    }
 }

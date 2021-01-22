@@ -9,30 +9,38 @@ import UIKit
 import SDWebImage
 import MapKit
 
+//MARK: - DetailsViewController
+
 class DetailsViewController: UIViewController {
     
-    @IBOutlet private weak var hotelImage: UIImageView!
+    //MARK: - Outlets
+    
     // 0 hotel name 1 address 2 low price 3 high price
     @IBOutlet private var labelsArray: [UILabel]!
+    @IBOutlet private weak var hotelImage: UIImageView!
     @IBOutlet private weak var mapView: MKMapView!
     
+    //MARK: - Variables
     private var viewModel = HotelsViewModel.shared
+    
+    //MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupImage()
-    }
-    override func viewWillAppear(_ animated: Bool) {
         setupView()
         navigationItem.title = "Details"
     }
+}
+
+//MARK: - HelperMethods
+
+fileprivate extension DetailsViewController {
     
     func setupView() {
         self.updateUI(hotel: viewModel.getSelectedHotel())
     }
-}
-
-fileprivate extension DetailsViewController {
+    
     func updateUI(hotel: HotelModel?) {
         hotelImage.sd_setImage(with: URL(string: hotel?.image?[0].url ?? ""), placeholderImage: #imageLiteral(resourceName: "placeholder"))
         labelsArray[0].text = hotel?.hotelName ?? ""
@@ -79,6 +87,5 @@ fileprivate extension DetailsViewController {
         annotation.title = viewModel.getSelectedHotel()?.hotelName ?? ""
         mapView.addAnnotation(annotation)
         mapView.mapType = .standard
-        
     }
 }
