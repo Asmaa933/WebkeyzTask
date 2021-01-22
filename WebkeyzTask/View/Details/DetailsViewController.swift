@@ -39,6 +39,7 @@ fileprivate extension DetailsViewController {
     
     func setupView() {
         self.updateUI(hotel: viewModel.getSelectedHotel())
+        mapView.layer.cornerRadius = 10
     }
     
     func updateUI(hotel: HotelModel?) {
