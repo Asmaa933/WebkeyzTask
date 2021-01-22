@@ -12,15 +12,5 @@ target 'WebkeyzTask' do
   pod 'SDWebImage'
   pod 'ObjectMapper'
   pod 'Toast'
-
-  
-  target 'WebkeyzTaskTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-  
-  target 'WebkeyzTaskUITests' do
-    # Pods for testing
-  end
   
 end

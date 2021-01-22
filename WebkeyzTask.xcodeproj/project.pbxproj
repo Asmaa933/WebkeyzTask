@@ -7,17 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EDCF4510B64087981ABF8A0 /* Pods_WebkeyzTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7061358D93B92FAAA8B71B4 /* Pods_WebkeyzTaskTests.framework */; };
 		120FA9455AE15493DAC8DCEC /* Pods_WebkeyzTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10B6DB7F39560B63C4E9ABED /* Pods_WebkeyzTask.framework */; };
-		20C0982C7DDA90FD81C4CCC7 /* Pods_WebkeyzTask_WebkeyzTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79EA0900EA2CB42D1DB113E3 /* Pods_WebkeyzTask_WebkeyzTaskUITests.framework */; };
 		76AE04F125BA8A1C0087C3CF /* ShadowCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AE04F025BA8A1C0087C3CF /* ShadowCornerView.swift */; };
 		76EBA30325B996500014CBD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBA30225B996500014CBD1 /* AppDelegate.swift */; };
 		76EBA30525B996500014CBD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBA30425B996500014CBD1 /* SceneDelegate.swift */; };
 		76EBA30A25B996500014CBD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76EBA30825B996500014CBD1 /* Main.storyboard */; };
 		76EBA30C25B996520014CBD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76EBA30B25B996520014CBD1 /* Assets.xcassets */; };
 		76EBA30F25B996520014CBD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76EBA30D25B996520014CBD1 /* LaunchScreen.storyboard */; };
-		76EBA31A25B996530014CBD1 /* WebkeyzTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBA31925B996530014CBD1 /* WebkeyzTaskTests.swift */; };
-		76EBA32525B996530014CBD1 /* WebkeyzTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBA32425B996530014CBD1 /* WebkeyzTaskUITests.swift */; };
 		76EBA35E25B99EF20014CBD1 /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBA35D25B99EF20014CBD1 /* HotelModel.swift */; };
 		76EBA37025B9A3C30014CBD1 /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBA36F25B9A3C30014CBD1 /* ApiHandler.swift */; };
 		76EBA37825B9A4B10014CBD1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBA37725B9A4B10014CBD1 /* Constants.swift */; };
@@ -29,23 +25,6 @@
 		76EBA40F25B9F4690014CBD1 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBA40E25B9F4690014CBD1 /* UITableViewExtension.swift */; };
 		76EBA41825B9FE850014CBD1 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EBA41725B9FE850014CBD1 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		76EBA31625B996530014CBD1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 76EBA2F725B996500014CBD1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 76EBA2FE25B996500014CBD1;
-			remoteInfo = WebkeyzTask;
-		};
-		76EBA32125B996530014CBD1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 76EBA2F725B996500014CBD1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 76EBA2FE25B996500014CBD1;
-			remoteInfo = WebkeyzTask;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		10B6DB7F39560B63C4E9ABED /* Pods_WebkeyzTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebkeyzTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,12 +39,6 @@
 		76EBA30B25B996520014CBD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76EBA30E25B996520014CBD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76EBA31025B996520014CBD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76EBA31525B996530014CBD1 /* WebkeyzTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebkeyzTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		76EBA31925B996530014CBD1 /* WebkeyzTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebkeyzTaskTests.swift; sourceTree = "<group>"; };
-		76EBA31B25B996530014CBD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76EBA32025B996530014CBD1 /* WebkeyzTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebkeyzTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		76EBA32425B996530014CBD1 /* WebkeyzTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebkeyzTaskUITests.swift; sourceTree = "<group>"; };
-		76EBA32625B996530014CBD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76EBA35D25B99EF20014CBD1 /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
 		76EBA36F25B9A3C30014CBD1 /* ApiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
 		76EBA37725B9A4B10014CBD1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -89,22 +62,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				120FA9455AE15493DAC8DCEC /* Pods_WebkeyzTask.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		76EBA31225B996530014CBD1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0EDCF4510B64087981ABF8A0 /* Pods_WebkeyzTaskTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		76EBA31D25B996530014CBD1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				20C0982C7DDA90FD81C4CCC7 /* Pods_WebkeyzTask_WebkeyzTaskUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,8 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				76EBA30125B996500014CBD1 /* WebkeyzTask */,
-				76EBA31825B996530014CBD1 /* WebkeyzTaskTests */,
-				76EBA32325B996530014CBD1 /* WebkeyzTaskUITests */,
 				76EBA30025B996500014CBD1 /* Products */,
 				81DF9BD33082DF7498772A6E /* Pods */,
 				746206CB9C51EA9F3BE42446 /* Frameworks */,
@@ -145,8 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				76EBA2FF25B996500014CBD1 /* WebkeyzTask.app */,
-				76EBA31525B996530014CBD1 /* WebkeyzTaskTests.xctest */,
-				76EBA32025B996530014CBD1 /* WebkeyzTaskUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,24 +118,6 @@
 				76EBA31025B996520014CBD1 /* Info.plist */,
 			);
 			path = WebkeyzTask;
-			sourceTree = "<group>";
-		};
-		76EBA31825B996530014CBD1 /* WebkeyzTaskTests */ = {
-			isa = PBXGroup;
-			children = (
-				76EBA31925B996530014CBD1 /* WebkeyzTaskTests.swift */,
-				76EBA31B25B996530014CBD1 /* Info.plist */,
-			);
-			path = WebkeyzTaskTests;
-			sourceTree = "<group>";
-		};
-		76EBA32325B996530014CBD1 /* WebkeyzTaskUITests */ = {
-			isa = PBXGroup;
-			children = (
-				76EBA32425B996530014CBD1 /* WebkeyzTaskUITests.swift */,
-				76EBA32625B996530014CBD1 /* Info.plist */,
-			);
-			path = WebkeyzTaskUITests;
 			sourceTree = "<group>";
 		};
 		76EBA33E25B9968E0014CBD1 /* Supporting Files */ = {
@@ -324,45 +259,6 @@
 			productReference = 76EBA2FF25B996500014CBD1 /* WebkeyzTask.app */;
 			productType = "com.apple.product-type.application";
 		};
-		76EBA31425B996530014CBD1 /* WebkeyzTaskTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 76EBA32C25B996530014CBD1 /* Build configuration list for PBXNativeTarget "WebkeyzTaskTests" */;
-			buildPhases = (
-				24623B96F9ECF5E97255A4F9 /* [CP] Check Pods Manifest.lock */,
-				76EBA31125B996530014CBD1 /* Sources */,
-				76EBA31225B996530014CBD1 /* Frameworks */,
-				76EBA31325B996530014CBD1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				76EBA31725B996530014CBD1 /* PBXTargetDependency */,
-			);
-			name = WebkeyzTaskTests;
-			productName = WebkeyzTaskTests;
-			productReference = 76EBA31525B996530014CBD1 /* WebkeyzTaskTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		76EBA31F25B996530014CBD1 /* WebkeyzTaskUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 76EBA32F25B996530014CBD1 /* Build configuration list for PBXNativeTarget "WebkeyzTaskUITests" */;
-			buildPhases = (
-				AA9759CC22C2CAE6DF0A6A3E /* [CP] Check Pods Manifest.lock */,
-				76EBA31C25B996530014CBD1 /* Sources */,
-				76EBA31D25B996530014CBD1 /* Frameworks */,
-				76EBA31E25B996530014CBD1 /* Resources */,
-				D84268162BC2F82DFF88AC36 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				76EBA32225B996530014CBD1 /* PBXTargetDependency */,
-			);
-			name = WebkeyzTaskUITests;
-			productName = WebkeyzTaskUITests;
-			productReference = 76EBA32025B996530014CBD1 /* WebkeyzTaskUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -374,14 +270,6 @@
 				TargetAttributes = {
 					76EBA2FE25B996500014CBD1 = {
 						CreatedOnToolsVersion = 12.2;
-					};
-					76EBA31425B996530014CBD1 = {
-						CreatedOnToolsVersion = 12.2;
-						TestTargetID = 76EBA2FE25B996500014CBD1;
-					};
-					76EBA31F25B996530014CBD1 = {
-						CreatedOnToolsVersion = 12.2;
-						TestTargetID = 76EBA2FE25B996500014CBD1;
 					};
 				};
 			};
@@ -399,8 +287,6 @@
 			projectRoot = "";
 			targets = (
 				76EBA2FE25B996500014CBD1 /* WebkeyzTask */,
-				76EBA31425B996530014CBD1 /* WebkeyzTaskTests */,
-				76EBA31F25B996530014CBD1 /* WebkeyzTaskUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -417,45 +303,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		76EBA31325B996530014CBD1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		76EBA31E25B996530014CBD1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		24623B96F9ECF5E97255A4F9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WebkeyzTaskTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9149E447F055B99D8167DC95 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -478,28 +328,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AA9759CC22C2CAE6DF0A6A3E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WebkeyzTask-WebkeyzTaskUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BF729418596B0E6F9AF14416 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -515,23 +343,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WebkeyzTask/Pods-WebkeyzTask-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D84268162BC2F82DFF88AC36 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WebkeyzTask-WebkeyzTaskUITests/Pods-WebkeyzTask-WebkeyzTaskUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WebkeyzTask-WebkeyzTaskUITests/Pods-WebkeyzTask-WebkeyzTaskUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WebkeyzTask-WebkeyzTaskUITests/Pods-WebkeyzTask-WebkeyzTaskUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -556,36 +367,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		76EBA31125B996530014CBD1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				76EBA31A25B996530014CBD1 /* WebkeyzTaskTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		76EBA31C25B996530014CBD1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				76EBA32525B996530014CBD1 /* WebkeyzTaskUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		76EBA31725B996530014CBD1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 76EBA2FE25B996500014CBD1 /* WebkeyzTask */;
-			targetProxy = 76EBA31625B996530014CBD1 /* PBXContainerItemProxy */;
-		};
-		76EBA32225B996530014CBD1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 76EBA2FE25B996500014CBD1 /* WebkeyzTask */;
-			targetProxy = 76EBA32125B996530014CBD1 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		76EBA30825B996500014CBD1 /* Main.storyboard */ = {
@@ -763,94 +545,6 @@
 			};
 			name = Release;
 		};
-		76EBA32D25B996530014CBD1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8B6FAF8482C52576FB2A90E /* Pods-WebkeyzTaskTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QVCZFS2TP2;
-				INFOPLIST_FILE = WebkeyzTaskTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Webkeyz.WebkeyzTaskTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebkeyzTask.app/WebkeyzTask";
-			};
-			name = Debug;
-		};
-		76EBA32E25B996530014CBD1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E14B41E8B665C261305DB0DC /* Pods-WebkeyzTaskTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QVCZFS2TP2;
-				INFOPLIST_FILE = WebkeyzTaskTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Webkeyz.WebkeyzTaskTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebkeyzTask.app/WebkeyzTask";
-			};
-			name = Release;
-		};
-		76EBA33025B996530014CBD1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 193DFD575060F8A0221C6B58 /* Pods-WebkeyzTask-WebkeyzTaskUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QVCZFS2TP2;
-				INFOPLIST_FILE = WebkeyzTaskUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Webkeyz.WebkeyzTaskUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = WebkeyzTask;
-			};
-			name = Debug;
-		};
-		76EBA33125B996530014CBD1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F6264151D7A3CF040080CE9 /* Pods-WebkeyzTask-WebkeyzTaskUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QVCZFS2TP2;
-				INFOPLIST_FILE = WebkeyzTaskUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Webkeyz.WebkeyzTaskUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = WebkeyzTask;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -868,24 +562,6 @@
 			buildConfigurations = (
 				76EBA32A25B996530014CBD1 /* Debug */,
 				76EBA32B25B996530014CBD1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		76EBA32C25B996530014CBD1 /* Build configuration list for PBXNativeTarget "WebkeyzTaskTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				76EBA32D25B996530014CBD1 /* Debug */,
-				76EBA32E25B996530014CBD1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		76EBA32F25B996530014CBD1 /* Build configuration list for PBXNativeTarget "WebkeyzTaskUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				76EBA33025B996530014CBD1 /* Debug */,
-				76EBA33125B996530014CBD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
