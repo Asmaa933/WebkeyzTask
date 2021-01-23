@@ -16,6 +16,6 @@ iOS Task (Swift)
 - Swift.
 - RxSwift.
 - Alamofire: for HTTP networking.
-- ObjectMapper: Parsing JSON.
+- ObjectMapper: Convert objects to and from JSON.
 - MapKit: Show Location.
-- SDWebImage: Show images from URL. 
+- SDWebImage: Show images from URL.
