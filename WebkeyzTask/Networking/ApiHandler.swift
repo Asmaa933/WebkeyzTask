@@ -11,6 +11,7 @@ import RxSwift
 import ObjectMapper
 import Network
 
+//MARK: - ApiHandlerProtocol
 
 protocol ApiHandlerProtocol {
     func getHotels() -> Observable<[HotelModel]>

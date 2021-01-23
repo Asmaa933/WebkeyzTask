@@ -14,14 +14,14 @@ import UIKit
 class ShadowCornerView: UIView {
     
     // MARK: - View Lifecycle
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupview()
     }
     
     // MARK: - Helper Methods
-
+    
     private func setupview() {
         self.layer.cornerRadius = 10
         self.layer.shadowColor = UIColor.gray.cgColor

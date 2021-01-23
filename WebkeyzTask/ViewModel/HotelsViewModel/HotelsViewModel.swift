@@ -21,18 +21,21 @@ protocol HotelsViewModelProtocol {
     func reloadHotels()
 }
 
+/// HotelsViewModel
 class HotelsViewModel {
+    
+    //MARK: - Variables
     
     static var shared = HotelsViewModel()
     var hotelsDriver: Driver<[HotelModel]>
     var errorSubject: PublishSubject<String> = PublishSubject()
-
+    
     private var disposeBag = DisposeBag()
     private let apiHandler : ApiHandlerProtocol = ApiHandler()
     private var hotelsObservable: Observable<[HotelModel]>?
     private var selectedHotel: HotelModel?
     private var hotelSubject: PublishSubject<[HotelModel]> = PublishSubject()
-
+    
     //MARK: - Initializer
     
     private init() {
@@ -44,6 +47,7 @@ class HotelsViewModel {
 
 extension HotelsViewModel: HotelsViewModelProtocol {
     
+    /// Get Hotels
     func fetchHotels() {
         hotelsObservable = apiHandler.getHotels()
         hotelsObservable?.subscribe(onNext: {[weak self] (hotels) in
@@ -53,14 +57,20 @@ extension HotelsViewModel: HotelsViewModelProtocol {
         }).disposed(by: disposeBag)
     }
     
+    /// Set Selected Hotel
+    /// - Parameter hotel: Selected Hotel
     func didSelectHotel(hotel: HotelModel) {
         self.selectedHotel = hotel
     }
     
+    /// Get Selected Hotel
+    /// - Returns: Selected Hotel or nil
     func getSelectedHotel() -> HotelModel? {
         return selectedHotel
     }
     
+    /// Get Location fot hotel
+    /// - Returns: Hotel Coordinate
     func getHotelLocation() -> CLLocationCoordinate2D? {
         if let latitude = selectedHotel?.latitude,let longitude = selectedHotel?.longitude {
             let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
@@ -69,7 +79,7 @@ extension HotelsViewModel: HotelsViewModelProtocol {
         return nil
     }
     
-    
+    /// Fetch Hotel Again
     func reloadHotels() {
         errorSubject.onNext("")
         fetchHotels()

@@ -63,6 +63,7 @@ class HotelModel: Mappable {
 }
 
 /// HotelImage
+
 class HotelImage: Mappable {
     
     //MARK:- Variables

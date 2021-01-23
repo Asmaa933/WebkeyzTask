@@ -21,15 +21,14 @@ class DetailsViewController: UIViewController {
     @IBOutlet private weak var mapView: MKMapView!
     
     //MARK: - Variables
+    
     private var viewModel = HotelsViewModel.shared
     
     //MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupImage()
         setupView()
-        navigationItem.title = "Details"
     }
 }
 
@@ -37,11 +36,16 @@ class DetailsViewController: UIViewController {
 
 fileprivate extension DetailsViewController {
     
+    /// Setup UI
     func setupView() {
-        self.updateUI(hotel: viewModel.getSelectedHotel())
+        navigationItem.title = "Details"
         mapView.layer.cornerRadius = 10
+        setupImage()
+        self.updateUI(hotel: viewModel.getSelectedHotel())
     }
     
+    /// Update Hotel Information
+    /// - Parameter hotel: Selected Hotel
     func updateUI(hotel: HotelModel?) {
         hotelImage.sd_setImage(with: URL(string: hotel?.image?[0].url ?? ""), placeholderImage: #imageLiteral(resourceName: "placeholder"))
         labelsArray[0].text = hotel?.hotelName ?? ""
@@ -51,11 +55,14 @@ fileprivate extension DetailsViewController {
         updateMap()
     }
     
+    /// Make Corner Radius and Add Gesture Recognizer
     func setupImage() {
         hotelImage.layer.cornerRadius = 10
         hotelImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
     }
     
+    
+    /// Image Tapped Action
     @objc func imageTapped() {
         let newImageView = UIImageView(frame: CGRect(x: 50, y: 100, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         newImageView.center = view.center
@@ -69,11 +76,13 @@ fileprivate extension DetailsViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
+    /// Dismiss Full Screen Image When Tap
     @objc func dismissFullscreenImage(_ gesture: UITapGestureRecognizer) {
         self.navigationController?.isNavigationBarHidden = false
         gesture.view?.removeFromSuperview()
     }
     
+    /// Update Location On MapKit
     func updateMap() {
         guard let coordinate = viewModel.getHotelLocation() else {
             mapView.isHidden = true

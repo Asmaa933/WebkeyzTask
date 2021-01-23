@@ -49,8 +49,14 @@ class HotelsViewController: UIViewController {
 
 fileprivate extension HotelsViewController {
     
-    private func bindObservers() {
+    func setupTableView() {
+        hotelTableView.registerCellNib(cellClass: HotelCell.self)
+        hotelTableView.addSubview(refreshControl)
+    }
+    
+    func bindObservers() {
         bindTableView()
+        bindRefreshControl()
         bindErrorsHandler()
     }
     
@@ -66,7 +72,9 @@ fileprivate extension HotelsViewController {
         hotelTableView.rx.modelSelected(HotelModel.self).subscribe(onNext: {[weak self] (hotel) in
             self?.navigateToDetailsView(hotel: hotel)
         }).disposed(by: disposeBag)
-        
+    }
+    
+    func bindRefreshControl() {
         refreshControl.rx.controlEvent(.valueChanged).bind {[weak self] (_) in
             guard let self = self else {return}
             self.hotelTableView.restore()
@@ -80,7 +88,7 @@ fileprivate extension HotelsViewController {
             guard let self = self else {return}
             if error == Constants.internetConnectionError {
                 if self.hotelTableView.numberOfRows(inSection: 0) == 0 {
-                    self.hotelTableView.setEmptyView(title: Constants.pullMessage, messageImage: #imageLiteral(resourceName: "no-internet-connection-sign_79145-136"))
+                    self.hotelTableView.setEmptyView(title: Constants.pullMessage, messageImage: #imageLiteral(resourceName: "no internet"))
                 } else {
                     self.view.makeToast(Constants.offlineMessage)
                 }
@@ -98,10 +106,5 @@ fileprivate extension HotelsViewController {
         viewModel.didSelectHotel(hotel: hotel)
         guard let detailsView = storyboard?.instantiateViewController(withIdentifier: Constants.detailsViewController) as? DetailsViewController else {return}
         navigationController?.pushViewController(detailsView, animated: true)
-    }
-    
-    func setupTableView() {
-        hotelTableView.registerCellNib(cellClass: HotelCell.self)
-        hotelTableView.addSubview(refreshControl)
     }
 }
