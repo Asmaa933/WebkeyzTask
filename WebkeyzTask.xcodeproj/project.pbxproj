@@ -188,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				76EBA40E25B9F4690014CBD1 /* UITableViewExtension.swift */,
+				76AE063E25BBBDEF0087C3CF /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -196,7 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				76EBA3B725B9B13F0014CBD1 /* HotelsViewModel.swift */,
-				76AE063E25BBBDEF0087C3CF /* UIImageViewExtension.swift */,
 			);
 			path = HotelsViewModel;
 			sourceTree = "<group>";
