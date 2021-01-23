@@ -29,7 +29,7 @@ class HotelsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        bindObservers()
+        bindObservables()
         viewModel.fetchHotels()
     }
     
@@ -42,19 +42,20 @@ class HotelsViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationItem.title = ""
     }
-    
 }
 
 //MARK: - Helper Methods
 
 fileprivate extension HotelsViewController {
     
+    /// Register Cell and Add UIRefreshControl to UITableView
     func setupTableView() {
         hotelTableView.registerCellNib(cellClass: HotelCell.self)
         hotelTableView.addSubview(refreshControl)
     }
     
-    func bindObservers() {
+    /// Bind MVVM Observables
+    func bindObservables() {
         bindTableView()
         bindRefreshControl()
         bindErrorsHandler()
@@ -98,10 +99,9 @@ fileprivate extension HotelsViewController {
                 }
             }
         }.disposed(by: disposeBag)
-            
-
     }
     
+    /// Navigate to Details View
     func navigateToDetailsView(hotel: HotelModel) {
         viewModel.didSelectHotel(hotel: hotel)
         guard let detailsView = storyboard?.instantiateViewController(withIdentifier: Constants.detailsViewController) as? DetailsViewController else {return}

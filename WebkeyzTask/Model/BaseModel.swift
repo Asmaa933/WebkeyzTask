@@ -8,7 +8,6 @@
 import ObjectMapper
 
 /// BaseModel
-
 class BaseModel: Mappable {
     
     //MARK:- Variables
