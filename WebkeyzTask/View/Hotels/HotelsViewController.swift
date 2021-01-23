@@ -30,6 +30,7 @@ class HotelsViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         bindObservables()
+        refreshControl.beginRefreshing()
         viewModel.fetchHotels()
     }
     
@@ -62,7 +63,8 @@ fileprivate extension HotelsViewController {
     }
     
     func bindTableView() {
-        viewModel.hotelsDriver.drive(hotelTableView.rx.items(cellIdentifier: Constants.hotelCell, cellType: HotelCell.self)) {(row,item,cell) in
+        viewModel.hotelsDriver.drive(hotelTableView.rx.items(cellIdentifier: Constants.hotelCell, cellType: HotelCell.self)) {[weak self](row,item,cell) in
+            self?.refreshControl.endRefreshing()
             cell.configureCell(image: item.image?[0].url ?? "", name: item.hotelName ?? "")
         }.disposed(by: disposeBag)
         
