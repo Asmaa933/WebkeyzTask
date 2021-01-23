@@ -48,6 +48,7 @@ fileprivate extension DetailsViewController {
     /// - Parameter hotel: Selected Hotel
     func updateUI(hotel: HotelModel?) {
         hotelImage.sd_setImage(with: URL(string: hotel?.image?[0].url ?? ""), placeholderImage: #imageLiteral(resourceName: "placeholder"))
+        hotelImage.isTransparent()
         labelsArray[0].text = hotel?.hotelName ?? ""
         labelsArray[1].text = hotel?.address ?? ""
         labelsArray[2].text = "\(hotel?.lowRate ?? 0)"

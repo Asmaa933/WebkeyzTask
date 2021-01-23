@@ -28,5 +28,7 @@ class HotelCell: UITableViewCell {
     func configureCell(image: String, name: String)  {
         hotelName.text = name
         hotelImage.sd_setImage(with: URL(string: image), placeholderImage: #imageLiteral(resourceName: "placeholder"))
+        hotelImage.isTransparent()
+
     }
 }
