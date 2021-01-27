@@ -25,7 +25,7 @@ class HotelsViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     //MARK: - View Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -71,7 +71,7 @@ fileprivate extension HotelsViewController {
         hotelTableView.rx.itemSelected.subscribe { (indexPath) in
             self.hotelTableView.deselectRow(at: indexPath, animated: false)
         }.disposed(by: disposeBag)
-
+        
         hotelTableView.rx.modelSelected(HotelModel.self).subscribe(onNext: {[weak self] (hotel) in
             self?.navigateToDetailsView(hotel: hotel)
         }).disposed(by: disposeBag)
@@ -82,25 +82,29 @@ fileprivate extension HotelsViewController {
             guard let self = self else {return}
             self.hotelTableView.restore()
             self.viewModel.reloadHotels()
-            self.refreshControl.endRefreshing()
         }.disposed(by: disposeBag)
     }
     
     func bindErrorsHandler() {
-        viewModel.errorSubject.observe(on: MainScheduler.instance).bind {[weak self] (error) in
-            guard let self = self else {return}
-            if error == Constants.internetConnectionError {
-                if self.hotelTableView.numberOfRows(inSection: 0) == 0 {
-                    self.hotelTableView.setEmptyView(title: Constants.pullMessage, messageImage: #imageLiteral(resourceName: "no internet"))
-                } else {
-                    self.view.makeToast(Constants.offlineMessage)
-                }
-            } else {
-                if !error.isEmpty {
-                    self.view.makeToast(error)
-                }
-            }
+        viewModel.errorDriver.drive { [weak self] (error) in
+            self?.showError(error: error)
         }.disposed(by: disposeBag)
+        
+    }
+    
+    func showError(error: String) {
+        refreshControl.endRefreshing()
+        if error == Constants.internetConnectionError {
+            if hotelTableView.numberOfRows(inSection: 0) == 0 {
+                hotelTableView.setEmptyView(title: Constants.pullMessage, messageImage: #imageLiteral(resourceName: "no internet"))
+            } else {
+                view.makeToast(Constants.offlineMessage)
+            }
+        } else {
+            if !error.isEmpty {
+                view.makeToast(error)
+            }
+        }
     }
     
     /// Navigate to Details View

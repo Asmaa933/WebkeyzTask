@@ -14,6 +14,7 @@ import MapKit
 
 protocol HotelsViewModelProtocol {
     var  hotelsDriver : Driver<[HotelModel]> {set get}
+    var  errorDriver : Driver<String> {set get}
     func fetchHotels()
     func didSelectHotel(hotel: HotelModel)
     func getSelectedHotel() -> HotelModel?
@@ -28,18 +29,20 @@ class HotelsViewModel {
     
     static var shared = HotelsViewModel()
     var hotelsDriver: Driver<[HotelModel]>
-    var errorSubject: PublishSubject<String> = PublishSubject()
+    var errorDriver: Driver<String>
     
     private var disposeBag = DisposeBag()
     private let apiHandler : ApiHandlerProtocol = ApiHandler()
     private var hotelsObservable: Observable<[HotelModel]>?
     private var selectedHotel: HotelModel?
     private var hotelSubject: PublishSubject<[HotelModel]> = PublishSubject()
+    private var errorSubject: PublishSubject<String> = PublishSubject()
     
     //MARK: - Initializer
     
     private init() {
         hotelsDriver = hotelSubject.asDriver(onErrorJustReturn: [])
+        errorDriver = errorSubject.asDriver(onErrorJustReturn: "")
     }
 }
 
