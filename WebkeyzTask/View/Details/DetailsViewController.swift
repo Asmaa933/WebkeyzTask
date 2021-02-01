@@ -65,14 +65,13 @@ fileprivate extension DetailsViewController {
     
     /// Image Tapped Action
     @objc func imageTapped() {
-        let newImageView = UIImageView(frame: CGRect(x: 50, y: 100, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        let newImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         newImageView.center = view.center
         newImageView.image = hotelImage.image
         newImageView.backgroundColor = .black
         newImageView.contentMode = .scaleAspectFit
         newImageView.isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
-        newImageView.addGestureRecognizer(tap)
+        newImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage)))
         self.view.addSubview(newImageView)
         self.navigationController?.isNavigationBarHidden = true
     }
