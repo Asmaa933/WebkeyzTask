@@ -68,8 +68,8 @@ fileprivate extension HotelsViewController {
             cell.configureCell(image: item.image?[0].url ?? "", name: item.hotelName ?? "")
         }.disposed(by: disposeBag)
         
-        hotelTableView.rx.itemSelected.subscribe { (indexPath) in
-            self.hotelTableView.deselectRow(at: indexPath, animated: false)
+        hotelTableView.rx.itemSelected.subscribe {[weak self] (indexPath) in
+            self?.hotelTableView.deselectRow(at: indexPath, animated: false)
         }.disposed(by: disposeBag)
         
         hotelTableView.rx.modelSelected(HotelModel.self).subscribe(onNext: {[weak self] (hotel) in
